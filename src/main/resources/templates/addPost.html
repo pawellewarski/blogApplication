@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Dodaj posta</title>
+</head>
+<body>
+<h1>Tu dodasz posta</h1>
+<form th:action="@{/addPost}" method="post">
+    <div class="form-group">
+        <label for="title">Example label</label>
+        <input type="text" th:name="title" class="form-control" id="title" placeholder="Tytuł">
+    </div>
+
+    <div class="form-group">
+        <label for="content">Terść posta</label>
+        <textarea  th:name="content" class="form-control" id="content" placeholder="Tu wpisz swój post" rows="5">
+
+        </textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Dodaj</button>
+</form>
+</body>
+</html>

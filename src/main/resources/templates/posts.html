@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="pl" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Posts</title>
@@ -10,8 +10,8 @@
 <div>
     <div th:each="post : ${posts}">
 
-        <h2 th:text="${post.getPostTitle}"></h2>
-        <h2 th:text="${post.getPostContent}"></h2>
+        <h2 th:text="${post.postTitle}"></h2>
+        <h2 th:text="${post.postContent}"></h2>
 
     </div>
 </div>
