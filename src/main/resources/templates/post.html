@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Post</title>
+</head>
+<body>
+<div th:if="${post != null}">
+
+    <h2 th:text="${post.postTitle}"></h2>
+    <h2 th:text="${post.postContent}"></h2>
+
+
+<h1>Komentarze</h1>
+    <div th:each="comment : ${post.comments}">
+        <!--
+               <div th:text="${#dates.format(comment.audit.added, 'yyyyMMdd hh:mm:ss')}"></div>
+        -->
+        <div th:text="${comment.comment}"></div>
+    </div>
+
+<form th:action="@{/post/addComment}" method="post">
+
+    <div>
+        <input type="hidden" name="postId" th:value="${post.id}">
+    </div>
+
+    <div class="form-group">
+        <label for="content">Treść komentarza</label>
+        <textarea  th:name="commentBody" class="form-control" id="content" placeholder="Tu wpisz swój komentarz" rows="5">
+
+        </textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Dodaj komentarz</button>
+</form>
+</div>
+</body>
+</html>

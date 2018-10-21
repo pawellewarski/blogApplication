@@ -11,7 +11,7 @@ import java.util.Date;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class postDTO {
+public class PostDTO {
 
     private Long id;
     private String title;
